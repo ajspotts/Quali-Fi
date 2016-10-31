@@ -1,0 +1,5 @@
+<h2>Openings</h2>
+
+<div data-ng-repeat="opening in vm.openings | orderBy:'-op_name'">
+  <p><a data-ui-sref="openingShow({id: opening.id})">{{opening.op_name}}</p>
+</div>
