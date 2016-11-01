@@ -90,5 +90,8 @@ function OpeningIndexControllerFunction(OpeningFactory) {
 }
 
 function OpeningShowControllerFunction(OpeningFactory, $stateParams){
-   this.opening = OpeningFactory.get({id: $stateParams.id})
-}
+  var applicantScores = []
+   this.opening = OpeningFactory.get({id: $stateParams.id}).$promise.then(function(response) {
+     this.opening = response
+   })
+ }
