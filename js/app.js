@@ -1,11 +1,11 @@
 
 
 angular
-  .module("qualifiApp", ["ui.router"])
+  .module("qualifiApp", ["ui.router", "ngResource"])
   .config(["$stateProvider", RouterFunction])
-  .controller("OpeningIndexController", [OpeningIndexControllerFunction])
+  .controller("OpeningIndexController", ["OpeningFactory", OpeningIndexControllerFunction])
   .controller("OpeningShowController", ["OpeningFactory", "$stateParams", OpeningShowControllerFunction])
-  .factory( "OpeningFactory", [OpeningFactoryFunction])
+  .factory( "OpeningFactory", ["$resource", OpeningFactoryFunction])
 
 let openingData = [
  {
@@ -81,18 +81,14 @@ function RouterFunction($stateProvider){
   })
 }
 
-function OpeningIndexControllerFunction() {
-  this.openings = openingData
+function OpeningFactoryFunction($resource){
+  return $resource( "http://localhost:3000/grumbles/:id" )
 }
 
-function OpeningFactoryFunction(){
-  return {
-    helloWorld: function(){
-      console.log( "Hello world!" );
-    }
-  }
+function OpeningIndexControllerFunction(OpeningFactory) {
+  this.openings = OpeningFactory.query()
 }
 
 function OpeningShowControllerFunction(OpeningFactory, $stateParams){
    this.opening = OpeningFactory.get({id: $stateParams.id})
- }
+}
