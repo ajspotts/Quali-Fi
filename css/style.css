@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Domine|Karla:700|Roboto:400,700,900');
 
 /* ============ Resets ============ */
+html {
+  height: 100%;
+}
+    
 body {
-  font-family: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 18px;
   background: #3F1263; 
   background: -webkit-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: -o-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: -moz-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: linear-gradient(160deg, #3F1263, #7AC7C4);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   color: #2C3E50;
+  font-family: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 18px;
+  height: 100%;
   margin: 0;
 }
 
@@ -21,6 +27,11 @@ h1, p {
 a {
   text-decoration: none;
 }
+
+a:hover {
+  color: #FFF;
+}
+
 /* ============ Styles ============ */
 .content h1 {
   padding-bottom: 9px;
@@ -30,6 +41,21 @@ a {
 header {
   width: 100%;
   margin: 1em auto;
+}
+
+nav {
+  background-color: #52044B;
+  padding: 0.5em 0;
+  box-shadow: 0 5px 5px #17202A;
+}
+
+nav a {
+  color: #FFF;
+  padding: 0 1em;
+}
+
+nav a:hover {
+  background-color: ;
 }
 
 .wrapper {
@@ -45,13 +71,14 @@ header {
 
 footer {
   background-color: #21173A;
-  color: #FFF;
+  color: #7AC7C4;
   font-size: 12px;
   width: 100%;
   text-align: center;
-  padding: 1em 0;
+  padding: 1.5em 0;
   border-left: 1px solid #21173A;
   box-shadow: 0 5px 10px #17202A;
+  letter-spacing: 1.5px;
 }
 
 .logo {
@@ -61,6 +88,10 @@ footer {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+}
+
+.logo a {
+  color: #FFF;
 }
 
 .slogan {
@@ -94,16 +125,6 @@ input {
   margin: 1em 0;
 }
 
-/*[role="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button {
-    -webkit-box-sizing: content-box;
-       -moz-box-sizing: content-box;
-            box-sizing: content-box;
-}*/
-
 /* Thanks Takeru Suzuki! https://codepen.io/terkel/pen/dvejH used for the resets */
 input[type="submit"],
 input[type="reset"],
@@ -134,17 +155,18 @@ input[type="reset"],
 input[type="button"],
 button {
   color: #008080;
+  cursor: pointer;
   background-color: #7AC7C4;
   border: 1px solid rgb(0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing : border-box;
-  cursor: pointer;
   letter-spacing: 2px;
   padding: 1em;
   text-transform: uppercase;
   transition: color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
   width: 100%;
+  margin: 1em 0;
 }
 
 button:hover {
