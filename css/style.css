@@ -4,7 +4,7 @@
 body {
   font-family: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 18px;
-  background: #3F1263; 
+  background: #3F1263;
   background: -webkit-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: -o-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: -moz-linear-gradient(160deg, #3F1263, #7AC7C4);
@@ -20,6 +20,7 @@ h1, p {
 
 a {
   text-decoration: none;
+  color: #2C3E50;
 }
 /* ============ Styles ============ */
 .content h1 {
@@ -85,7 +86,7 @@ li {
 
 input {
   background: #FFF;
-  border: 1px solid #D7DBDD; 
+  border: 1px solid #D7DBDD;
   box-sizing : border-box;
   display: block;
   font-size: 18px;
@@ -164,6 +165,16 @@ button:hover {
   .logo {
    font-size: 36px;
    text-align: left;
+  }
+
+  .opening {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .opening_buttons {
+    display: flex;
   }
 
   .slogan {

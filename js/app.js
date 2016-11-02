@@ -1,5 +1,3 @@
-
-
 angular
   .module("qualifiApp", ["ui.router", "ngResource"])
   .config(["$stateProvider", RouterFunction])
@@ -42,7 +40,7 @@ function RouterFunction($stateProvider){
 }
 
 function OpeningFactoryFunction($resource){
-  return $resource( "https://quali-fi.herokuapp.com/openings", {}, {
+  return $resource( "https://quali-fi.herokuapp.com/openings/:id", {}, {
     update: {method: "PUT"}
   })
 }
@@ -76,5 +74,9 @@ function OpeningShowControllerFunction(OpeningFactory, $stateParams){
   // this.opening = OpeningFactory.get({id: $stateParams.id})
   // console.log(this.opening)
 
-  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.openingTitleLength = response.content.length)
+  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.openingName = response.opening_name)
+  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.opening = response.opening_name)
+
+
+
  }
