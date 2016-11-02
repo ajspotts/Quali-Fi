@@ -1,13 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Domine|Karla:700|Roboto:400,700,900');
+
+/* ============ Resets ============ */
+body {
+  font-family: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 18px;
+  background: #3F1263; 
+  background: -webkit-linear-gradient(160deg, #3F1263, #7AC7C4);
+  background: -o-linear-gradient(160deg, #3F1263, #7AC7C4);
+  background: -moz-linear-gradient(160deg, #3F1263, #7AC7C4);
+  background: linear-gradient(160deg, #3F1263, #7AC7C4);
+  background-repeat: no-repeat;
+  color: #2C3E50;
+  margin: 0;
+}
+
+h1, p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
-  color: black;
+}
+/* ============ Styles ============ */
+.content h1 {
+  padding-bottom: 9px;
+  border-bottom: 6px solid #D7DBDD;
 }
 
-a:hover {
-  color:lightgreen;
+header {
+  width: 100%;
+  margin: 1em auto;
 }
 
-div {
-  border: 1px solid black;
-  margin: 3px;
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.content {
+  background: #F5F5F5;
+  padding: 2.5em 3em;
+  box-shadow: 0 3px 15px #17202A;
+}
+
+footer {
+  background-color: #21173A;
+  color: #FFF;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+  border-left: 1px solid #21173A;
+  box-shadow: 0 5px 10px #17202A;
+}
+
+.logo {
+  color: #FFF;
+  font-family: 'Karla', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.slogan {
+  color: #F8F9F9;
+  font-family: 'Domine', 'Times New Roman', serif;
+  font-size: 21px;
+  text-align: center;
+  margin-top: 0.25em;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: .5em 0 1.25em 0;
+}
+
+li {
+  display: inline;
+  padding: 0 0.25em 0 0;
+}
+
+
+input {
+  background: #FFF;
+  border: 1px solid #D7DBDD; 
+  box-sizing : border-box;
+  display: block;
+  font-size: 18px;
+  padding: 15px;
+  width: 100%;
+  margin: 1em 0;
+}
+
+/*[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}*/
+
+/* Thanks Takeru Suzuki! https://codepen.io/terkel/pen/dvejH used for the resets */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+     -moz-user-select: none;
+      -ms-user-select: none;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  color: #008080;
+  background-color: #7AC7C4;
+  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing : border-box;
+  cursor: pointer;
+  letter-spacing: 2px;
+  padding: 1em;
+  text-transform: uppercase;
+  transition: color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+  width: 100%;
+}
+
+button:hover {
+  color: #FFF;
+  background-color: #3F1263;
+  transition: color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+
+/* ============ Media Queries ============ */
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+     width: 65%;
+  }
+
+  .logo {
+   font-size: 36px;
+   text-align: left;
+  }
+
+  .slogan {
+   font-size: 16px;
+   text-align: left;
+  }
+  input, button {
+   width: 75%;
+  }
 }
