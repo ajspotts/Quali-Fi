@@ -4,9 +4,9 @@
 html {
   height: 100%;
 }
-    
+
 body {
-  background: #3F1263; 
+  background: #3F1263;
   background: -webkit-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: -o-linear-gradient(160deg, #3F1263, #7AC7C4);
   background: -moz-linear-gradient(160deg, #3F1263, #7AC7C4);
@@ -215,16 +215,6 @@ button:hover {
   .logo {
     font-size: 36px;
     text-align: left;
-  }
-
-  .opening {
-    border: 1px solid black;
-    margin: 5px;
-    padding: 10px;
-  }
-
-  .opening_buttons {
-    display: flex;
   }
 
   .slogan {

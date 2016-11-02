@@ -3,7 +3,7 @@ angular
   .config(["$stateProvider", RouterFunction])
   .controller("OpeningIndexController", ["OpeningFactory", OpeningIndexControllerFunction])
   .controller("OpeningShowController", ["OpeningFactory", "$stateParams", OpeningShowControllerFunction])
-  .controller("OpeningNewController", ["OpeningFactory", "$stateParams", OpeningNewControllerFunction])
+  .controller("OpeningNewController", ["OpeningFactory","$state", "$stateParams", OpeningNewControllerFunction])
   .controller("OpeningEditController", ["OpeningFactory", "$stateParams", OpeningEditControllerFunction])
   .factory( "OpeningFactory", ["$resource", OpeningFactoryFunction])
 
@@ -49,15 +49,14 @@ function OpeningIndexControllerFunction(OpeningFactory) {
   this.openings = OpeningFactory.query()
 }
 
-function OpeningNewControllerFunction( OpeningFactory ){
+function OpeningNewControllerFunction(OpeningFactory, $state){
      this.opening = new OpeningFactory()
      this.create = function(){
-       this.opening.$save().then(opening => {
-         console.log(opening);
+       this.opening.$save().then(opening => $state.go("openingIndex"))
          // this is where the redirect should happen
-       })
+       }
      }
-   }
+
 
 function OpeningEditControllerFunction(OpeningFactory, $stateParams){
   this.opening = OpeningFactory.get({id: $stateParams.id})
