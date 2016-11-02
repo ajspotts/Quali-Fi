@@ -1,0 +1,9 @@
+<h1>All Openings</h1>
+
+<a data-ui-sref="openingShow({id: opening.id})" data-ng-repeat="opening in vm.openings">
+  <p>Position: {{opening.opening_name}}</p>
+  <p>Skills: {{opening.skills}}</p>
+  <p>Education: {{opening.education}}</p>
+  <p>Years Experience: {{opening.years_exp}}</p>
+  <button><a data-ui-sref="openingEdit({id: opening.id})">Edit</a></button>
+</a>

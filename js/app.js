@@ -11,25 +11,25 @@ angular
 
 function RouterFunction($stateProvider){
   $stateProvider
-  .state("landing", {
+  .state("Index", {
     url: "/",
-    templateUrl: "js/ng-views/landing.html"
+    templateUrl: "js/ng-views/index.html"
   })
   .state("openingIndex", {
     url: "/openings",
     controller: "OpeningIndexController",
     controllerAs: "vm",
-    templateUrl: "js/ng-views/index.html"
+    templateUrl: "js/ng-views/openings/index.html"
   })
   .state("openingNew", {
     url: "/openings/new",
-    templateUrl: "js/ng-views/new.html",
+    templateUrl: "js/ng-views/openings/new.html",
     controller: "OpeningNewController",
     controllerAs: "vm"
   })
   .state("openingEdit", {
     url: "/openings/:id/edit",
-    templateUrl: "js/ng-views/edit.html",
+    templateUrl: "js/ng-views/openings/edit.html",
     controller: "OpeningEditController",
     controllerAs: "vm"
   })
@@ -37,7 +37,7 @@ function RouterFunction($stateProvider){
     url: "/openings/:id",
     controller: "OpeningShowController",
     controllerAs: "vm",
-    templateUrl: "js/ng-views/show.html"
+    templateUrl: "js/ng-views/openings/show.html"
   })
 }
 
