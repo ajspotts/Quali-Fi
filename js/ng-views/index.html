@@ -2,8 +2,12 @@
 
 <a data-ui-sref="openingShow({id: opening.id})" data-ng-repeat="opening in vm.openings">
   <div>
-    <p><em>Author: </em>{{opening.authorName}}</p>
-    <p><em>Title: </em>{{opening.title}}</p>
-    <p><em>Content: </em>{{opening.content}}</p>
+  <div>
+    <p><em>Position: </em>{{opening.opening_name}}</p>
+    <p><em>Skills: </em>{{opening.skills}}</p>
+    <p><em>Education: </em>{{opening.education}}</p>
+    <p><em>Years Experience: </em>{{opening.years_exp}}</p>
   </div>
+  <a data-ui-sref="openingEdit({id: opening.id})">Edit</a>
+</div>
 </a>

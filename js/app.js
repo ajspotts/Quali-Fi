@@ -5,6 +5,8 @@ angular
   .config(["$stateProvider", RouterFunction])
   .controller("OpeningIndexController", ["OpeningFactory", OpeningIndexControllerFunction])
   .controller("OpeningShowController", ["OpeningFactory", "$stateParams", OpeningShowControllerFunction])
+  .controller("OpeningNewController", ["OpeningFactory", "$stateParams", OpeningNewControllerFunction])
+  .controller("OpeningEditController", ["OpeningFactory", "$stateParams", OpeningEditControllerFunction])
   .factory( "OpeningFactory", ["$resource", OpeningFactoryFunction])
 
 function RouterFunction($stateProvider){
@@ -19,6 +21,18 @@ function RouterFunction($stateProvider){
     controllerAs: "vm",
     templateUrl: "js/ng-views/index.html"
   })
+  .state("openingNew", {
+    url: "/openings/new",
+    templateUrl: "js/ng-views/new.html",
+    controller: "OpeningNewController",
+    controllerAs: "vm"
+  })
+  .state("openingEdit", {
+    url: "/openings/:id/edit",
+    templateUrl: "js/ng-views/edit.html",
+    controller: "OpeningEditController",
+    controllerAs: "vm"
+  })
   .state("openingShow", {
     url: "/openings/:id",
     controller: "OpeningShowController",
@@ -28,14 +42,34 @@ function RouterFunction($stateProvider){
 }
 
 function OpeningFactoryFunction($resource){
-  return $resource( "http://localhost:3000/grumbles/:id" )
+  return $resource( "http://quali-fi.herokuapp.com/openings/:id", {}, {
+    update: {method: "PUT"}
+  })
 }
 
 function OpeningIndexControllerFunction(OpeningFactory) {
   this.openings = OpeningFactory.query()
 }
 
+function OpeningNewControllerFunction( OpeningFactory ){
+     this.opening = new OpeningFactory();
+     this.create = function(){
+       this.opening.$save()
+     }
+   }
+
+function OpeningEditControllerFunction(OpeningFactory, $stateParams){
+  this.opening = OpeningFactory.get({id: $stateParams.id})
+  this.update = function(){
+    this.opening.$update({id: $stateParams.id})
+  }
+  this.destroy = function(){
+      this.grumble.$delete({id: $stateParams.id});
+    }
+}
+
 function OpeningShowControllerFunction(OpeningFactory, $stateParams){
+  // To access the full opening object
   // this.opening = OpeningFactory.get({id: $stateParams.id})
   // console.log(this.opening)
 
