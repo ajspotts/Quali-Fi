@@ -7,60 +7,6 @@ angular
   .controller("OpeningShowController", ["OpeningFactory", "$stateParams", OpeningShowControllerFunction])
   .factory( "OpeningFactory", ["$resource", OpeningFactoryFunction])
 
-let openingData = [
- {
-   "id": 1,
-   "op_name": "Rails Developer",
-   "skills": ["Ruby", "Rails", "JavaScript", "CSS"],
-   "edu": ["Coding Bootcamp"],
-   "years_exp": 3,
-   "local": true
- },
- {
-   "id": 2,
-   "op_name": "Front End Developer",
-   "skills": ["HTML", "CSS", "JavaScript", "Angular.js"],
-   "edu": ["Bachelors Degree"],
-   "years_exp": 5,
-   "local": false
- },
- {
-   "id": 3,
-   "op_name": "Graphic Designer",
-   "skills": ["Adobe Photoshop", "Affinty Photo", "Pixelmator", "Adobe Photoshop"],
-   "edu": ["High School"],
-   "years_exp": 2,
-   "local": true
- }
-]
-
-let applicantData = [
- {
-   "id": 1,
-   "name": "Burt Maclin",
-   "skills": ["Rails", "Ruby", "CSS", "Angular.js"],
-   "edu": ["High School"],
-   "years_exp": 4,
-   "local": false
- },
- {
-   "id": 2,
-   "name": "Steve Jones",
-   "skills": ["Ruby", "MongoDB", "Express", "Angular.js"],
-   "edu": ["Self-Taught"],
-   "years_exp": 3,
-   "local": true
- },
- {
-   "id:": 3,
-   "name": "Billy Madison",
-   "skills": ["Adobe Photoshop", "Pixelmator", "CSS", "JavaScript"],
-   "edu": ["Master's Degree"],
-   "years_exp": 7,
-   "local": false
- }
-]
-
 function RouterFunction($stateProvider){
   $stateProvider
   .state("landing", {
@@ -90,5 +36,8 @@ function OpeningIndexControllerFunction(OpeningFactory) {
 }
 
 function OpeningShowControllerFunction(OpeningFactory, $stateParams){
-   OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.opening = response.content.length)
+  // this.opening = OpeningFactory.get({id: $stateParams.id})
+  // console.log(this.opening)
+
+  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.openingTitleLength = response.content.length)
  }

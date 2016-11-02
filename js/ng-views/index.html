@@ -1,5 +1,9 @@
 <h2>Openings</h2>
 
-<div data-ng-repeat="opening in vm.openings">
-  <p><a data-ui-sref="openingShow({id: opening.id})">{{opening.title}}</p>
-</div>
+<a data-ui-sref="openingShow({id: opening.id})" data-ng-repeat="opening in vm.openings">
+  <div>
+    <p><em>Author: </em>{{opening.authorName}}</p>
+    <p><em>Title: </em>{{opening.title}}</p>
+    <p><em>Content: </em>{{opening.content}}</p>
+  </div>
+</a>
