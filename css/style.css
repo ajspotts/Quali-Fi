@@ -177,16 +177,44 @@ button:hover {
   transition: background-color 0.3s ease 0s;
 }
 
+.opening {
+  background-color: #FFF;
+  margin: 1em auto 0 auto;
+  padding: 1em;
+  transition: box-shadow 0.3s ease 0s;
+}
+
+.opening > div {
+  flex-grow: 1;
+  padding: 12px;
+}
+
+.opening:hover {
+  box-shadow: 0 0px 6px #AEB6BF;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease 0s;
+}
+
+.controls {
+  display: flex;
+  margin-top: 0;
+}
+
+.controls > button {
+  margin-top: 0;
+  padding: 9px;
+}
+
 /* ============ Media Queries ============ */
 
 @media screen and (min-width: 768px) {
   .wrapper {
-     width: 65%;
+    width: 65%;
   }
 
   .logo {
-   font-size: 36px;
-   text-align: left;
+    font-size: 36px;
+    text-align: left;
   }
 
   .opening {
@@ -200,10 +228,14 @@ button:hover {
   }
 
   .slogan {
-   font-size: 16px;
-   text-align: left;
+    font-size: 16px;
+    text-align: left;
   }
   input, button {
-   width: 75%;
+    width: 75%;
+  }
+
+  .opening {
+    display: flex;
   }
 }
