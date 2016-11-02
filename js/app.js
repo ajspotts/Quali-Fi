@@ -42,7 +42,7 @@ function RouterFunction($stateProvider){
 }
 
 function OpeningFactoryFunction($resource){
-  return $resource( "http://quali-fi.herokuapp.com/openings/:id", {}, {
+  return $resource( "https://quali-fi.herokuapp.com/openings", {}, {
     update: {method: "PUT"}
   })
 }
@@ -52,9 +52,12 @@ function OpeningIndexControllerFunction(OpeningFactory) {
 }
 
 function OpeningNewControllerFunction( OpeningFactory ){
-     this.opening = new OpeningFactory();
+     this.opening = new OpeningFactory()
      this.create = function(){
-       this.opening.$save()
+       this.opening.$save().then(opening => {
+         console.log(opening);
+         // this is where the redirect should happen
+       })
      }
    }
 
