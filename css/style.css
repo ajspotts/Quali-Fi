@@ -35,7 +35,7 @@ a:hover {
 
 /* ============ Styles ============ */
 .content h1 {
-  margin: 1em;
+  margin: 1em 0;
 }
 
 header {
@@ -168,20 +168,14 @@ button {
   border: 1px solid rgb(0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing : border-box;
+  font-size: 14px;
   letter-spacing: 2px;
-  padding: 1em;
+  padding: 0.75em;
   text-transform: uppercase;
   transition: color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
   width: 100%;
   margin: 1em 0;
-}
-
-button:hover {
-  color: #FFF;
-  background-color: #3F1263;
-  transition: color 0.3s ease 0s;
-  transition: background-color 0.3s ease 0s;
 }
 
 .opening {
@@ -191,9 +185,9 @@ button:hover {
   transition: box-shadow 0.3s ease 0s;
 }
 
-.opening .details {
+.details {
   flex-grow: 1;
-  padding: 6px;
+  padding: 1em;
 }
 
 .details p {
@@ -244,6 +238,7 @@ button:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+button:hover,
 .landing a:hover,
 .landing-2 a:hover,
 .controls a:hover {
