@@ -190,9 +190,9 @@ button:hover {
 }
 
 .opening:hover {
-  box-shadow: 0 0px 6px #AEB6BF;
+  box-shadow: 0 0 9px #AEB6BF;
   cursor: pointer;
-  transition: box-shadow 0.5s ease 0s;
+  transition: box-shadow 0.3s ease 0s;
 }
 
 .controls {
@@ -203,9 +203,6 @@ button:hover {
 .controls > button {
   margin-top: 0;
   padding: 9px;
-}
-
-.landing {
 }
 
 .landing a {
@@ -220,7 +217,19 @@ button:hover {
   transition: background-color 0.3s ease 0s;
 }
 
-.landing a:hover {
+.controls a {
+  background-color: #7AC7C4;
+  color: #008080;
+  display: block;
+  padding: 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+  width: 100%;
+}
+
+.landing a:hover, .controls a:hover {
   color: #FFF;
   background-color: #52044B;
   transition: color 0.3s ease 0s;
