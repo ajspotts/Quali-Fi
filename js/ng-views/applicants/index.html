@@ -1,0 +1,19 @@
+<h1>All Applicants</h1>
+
+<div data-ng-repeat="applicant in vm.applicants">
+  <div data-ui-sref="applicantShow({id: applicant.id})" class="applicant">
+    <div>
+      <p>{{applicant.name}}</p>
+    </div>
+    <div>
+      <p>Skills: {{applicant.skills}}</p>
+      <p>Education: {{applicant.education}}</p>
+      <p>Years Experience: {{applicant.years_exp}}</p>
+    </div>
+  </div>
+  <div class="controls">
+    <a data-ui-sref="applicantShow({id: applicant.id})"><button>View</button></a>
+    <a data-ui-sref="applicantEdit({id: applicant.id})"><button>Edit</button></a>
+    <!-- <a data-ui-sref="openingDelete({id: opening.id})"><button>Delete</button></a> -->
+  </div>
+</div>
