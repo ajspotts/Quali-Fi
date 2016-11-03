@@ -1,24 +1,25 @@
 <nav>
   <a data-ui-sref="Index" title="home"><i class="fa fa-home" aria-hidden="true"></i> home</a>
-  <a data-ui-sref="openingNew" title="home"><i class="fa fa-plus-square-o" aria-hidden="true"></i> create a new opening</a>
+  <a data-ui-sref="applicantNew" title="home"><i class="fa fa-plus-square-o" aria-hidden="true"></i> create a new applicant</a>
 </nav>
 
 <h1>All Applicants</h1>
 
 <div data-ng-repeat="applicant in vm.applicants">
   <div data-ui-sref="applicantShow({id: applicant.id})" class="applicant">
-    <div>
-      <p>{{applicant.name}}</p>
-    </div>
-    <div>
-      <p>Skills: {{applicant.skills}}</p>
-      <p>Education: {{applicant.education}}</p>
-      <p>Years Experience: {{applicant.years_exp}}</p>
+    <div class="opening">
+      <div class="details">
+        <h2>{{applicant.name}}</h2>
+      </div>
+      <div class="details">
+        <p>Skills: {{applicant.skills}}</p>
+        <p>Education: {{applicant.education}}</p>
+        <p>Years Experience: {{applicant.years_exp}}</p>
+      </div>
     </div>
   </div>
   <div class="controls">
-    <a data-ui-sref="applicantShow({id: applicant.id})"><button>View</button></a>
-    <a data-ui-sref="applicantEdit({id: applicant.id})"><button>Edit</button></a>
-    <!-- <a data-ui-sref="openingDelete({id: opening.id})"><button>Delete</button></a> -->
+    <a data-ui-sref="applicantShow({id: applicant.id})"><i class="fa fa-search" aria-hidden="true"></i> View</a>
+    <a data-ui-sref="applicantEdit({id: applicant.id})"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
   </div>
 </div>

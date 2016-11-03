@@ -1,6 +1,6 @@
 <nav>
   <a data-ui-sref="Index" title="home"><i class="fa fa-home" aria-hidden="true"></i> home</a>
-  <a data-ui-sref="openingIndex" title="back to previous page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back</a>
+  <a data-ui-sref="applicantIndex" title="back to previous page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back</a>
 </nav>
 
 <h2>Edit Applicant</h2>
@@ -10,6 +10,8 @@
   <input value="vm.applicant.skills" data-ng-model="vm.applicant.skills" />
   <input value="vm.applicant.education" data-ng-model="vm.applicant.education" />
   <input value="vm.applicant.years_exp" data-ng-model="vm.applicant.years_exp"></input>
-  <button type="button" data-ng-click="vm.update()">Update</button>
-  <button data-ng-click="vm.destroy()">Delete</button>
+  <div class="controls">
+    <button type="button" data-ng-click="vm.update()">Update</button>
+    <button data-ng-click="vm.destroy()">Delete</button>
+  </div>
 </form>
