@@ -206,11 +206,6 @@ button:hover {
   transition: box-shadow 0.3s ease 0s;
 }
 
-.controls {
-  display: flex;
-  margin-top: 0;
-}
-
 .landing a, .landing-2 a {
   display: block;
   letter-spacing: 2px;
@@ -220,6 +215,8 @@ button:hover {
   text-transform: uppercase;
   transition: color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .landing a {
@@ -236,13 +233,15 @@ button:hover {
   background-color: #7AC7C4;
   color: #2F4F4F;
   display: block;
+  font-size: 14px;
   letter-spacing: 2px;
   padding: 0.75em;
   text-align: center;
   text-transform: uppercase;
   transition: color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
-  width: 100%;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .landing a:hover,
@@ -284,11 +283,24 @@ button:hover {
     display: flex;
   }
 
+  .controls {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .controls a {
+    width: 100%;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
   .landing, .landing-2 {
     display: flex;
     flex-direction: row;
   }
   .landing a, .landing-2 a {
     width: 100%;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
