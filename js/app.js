@@ -3,8 +3,8 @@ angular
   .config(["$stateProvider", RouterFunction])
   .controller("OpeningIndexController", ["OpeningFactory", OpeningIndexControllerFunction])
   .controller("OpeningShowController", ["OpeningFactory", "$stateParams", OpeningShowControllerFunction])
-  .controller("OpeningNewController", ["OpeningFactory","$state", "$stateParams", OpeningNewControllerFunction])
-  .controller("OpeningEditController", ["OpeningFactory", "$stateParams", OpeningEditControllerFunction])
+  .controller("OpeningNewController", ["OpeningFactory", "$state", OpeningNewControllerFunction])
+  .controller("OpeningEditController", ["OpeningFactory", "$state", "$stateParams", OpeningEditControllerFunction])
   .factory( "OpeningFactory", ["$resource", OpeningFactoryFunction])
 
 function RouterFunction($stateProvider){
@@ -25,17 +25,17 @@ function RouterFunction($stateProvider){
     controller: "OpeningNewController",
     controllerAs: "vm"
   })
-  .state("openingEdit", {
-    url: "/openings/:id/edit",
-    templateUrl: "js/ng-views/openings/edit.html",
-    controller: "OpeningEditController",
-    controllerAs: "vm"
-  })
   .state("openingShow", {
     url: "/openings/:id",
     controller: "OpeningShowController",
     controllerAs: "vm",
     templateUrl: "js/ng-views/openings/show.html"
+  })
+  .state("openingEdit", {
+    url: "/openings/:id/edit",
+    controller: "OpeningEditController",
+    controllerAs: "vm",
+    templateUrl: "js/ng-views/openings/edit.html"
   })
 }
 
@@ -52,19 +52,20 @@ function OpeningIndexControllerFunction(OpeningFactory) {
 function OpeningNewControllerFunction(OpeningFactory, $state){
      this.opening = new OpeningFactory()
      this.create = function(){
-       this.opening.$save().then(opening => $state.go("openingIndex"))
+       this.opening.$save().then(response => $state.go("openingIndex"))
          // this is where the redirect should happen
        }
      }
 
 
-function OpeningEditControllerFunction(OpeningFactory, $stateParams){
+function OpeningEditControllerFunction(OpeningFactory, $state, $stateParams){
   this.opening = OpeningFactory.get({id: $stateParams.id})
   this.update = function(){
-    this.opening.$update({id: $stateParams.id})
+    this.opening.$update({id: $stateParams.id}).then(response => $state.go('openingIndex'))
+
   }
   this.destroy = function(){
-      this.grumble.$delete({id: $stateParams.id});
+      this.opening.$delete({id: $stateParams.id}).then(response => $state.go('openingIndex'))
     }
 }
 
@@ -73,8 +74,7 @@ function OpeningShowControllerFunction(OpeningFactory, $stateParams){
   // this.opening = OpeningFactory.get({id: $stateParams.id})
   // console.log(this.opening)
 
-  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.openingName = response.opening_name)
-  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.opening = response.opening_name)
+  OpeningFactory.get({id: $stateParams.id}).$promise.then(response => this.openingName = this.opening = response.opening_name)
 
 
 

@@ -1,7 +1,7 @@
 <h1>All Openings</h1>
 
-<div data-ui-sref="openingShow({id: opening.id})" data-ng-repeat="opening in vm.openings">
-  <div class="opening">
+<div data-ng-repeat="opening in vm.openings">
+  <div data-ui-sref="openingShow({id: opening.id})" class="opening">
     <div>
       <p>{{opening.opening_name}}</p>
     </div>
@@ -14,6 +14,6 @@
   <div class="controls">
     <a data-ui-sref="openingShow({id: opening.id})"><button>View</button></a>
     <a data-ui-sref="openingEdit({id: opening.id})"><button>Edit</button></a>
-    <a data-ui-sref="openingDelete({id: opening.id})"><button>Delete</button></a>
+    <!-- <a data-ui-sref="openingDelete({id: opening.id})"><button>Delete</button></a> -->
   </div>
 </div>
