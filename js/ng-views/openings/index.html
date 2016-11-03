@@ -1,14 +1,21 @@
+<nav>
+  <a data-ui-sref="Index" title="home"><i class="fa fa-home" aria-hidden="true"></i> home</a>
+  <a data-ui-sref="openingNew" title="home"><i class="fa fa-plus-square-o" aria-hidden="true"></i> create a new opening</a>
+</nav>
+
 <h1>All Openings</h1>
 
 <div data-ng-repeat="opening in vm.openings">
-  <div data-ui-sref="openingShow({id: opening.id})" class="opening">
-    <div>
-      <p>{{opening.opening_name}}</p>
-    </div>
-    <div>
-      <p>Skills: {{opening.skills}}</p>
-      <p>Education: {{opening.education}}</p>
-      <p>Years Experience: {{opening.years_exp}}</p>
+  <div data-ui-sref="openingShow({id: opening.id})">
+    <div class="opening">
+      <div class="details">
+        <h2>{{opening.opening_name}}</h2>
+      </div>
+      <div class="details">
+        <p>Skills: {{opening.skills}}</p>
+        <p>Education: {{opening.education}}</p>
+        <p>Years Experience: {{opening.years_exp}}</p>
+      </div>
     </div>
   </div>
   <div class="controls">

@@ -1,9 +1,14 @@
+<nav>
+  <a data-ui-sref="Index" title="home"><i class="fa fa-home" aria-hidden="true"></i> home</a>
+  <a data-ui-sref="openingIndex" title="back to previous page"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back</a>
+</nav>
+
 <h2>New Opening</h2>
 
 <form>
   <input placeholder="Position" data-ng-model="vm.opening.opening_name" />
   <input placeholder="Skills" data-ng-model="vm.opening.skills" />
-  <input placeholder="Years Programming Experience" data-ng-model="vm.opening.years_exp" />
+  <input placeholder="Years of Experience" data-ng-model="vm.opening.years_exp" />
   <input placeholder="Education" data-ng-model="vm.opening.education"></input>
   <button type="button" data-ng-click="vm.create()">Create</button>
 </form>

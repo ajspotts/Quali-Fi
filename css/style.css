@@ -35,8 +35,7 @@ a:hover {
 
 /* ============ Styles ============ */
 .content h1 {
-  padding-bottom: 9px;
-  border-bottom: 6px solid #D7DBDD;
+  margin: 1em;
 }
 
 header {
@@ -45,18 +44,24 @@ header {
 }
 
 nav {
-  background-color: #52044B;
-  padding: 0.5em 0;
-  box-shadow: 0 5px 5px #17202A;
+  background-color: #D6DBDF;
+  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  padding: 1em 0;
 }
 
 nav a {
-  color: #FFF;
-  padding: 0 1em;
+  color: #85929E;
+  padding: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease 0s;
 }
 
 nav a:hover {
-  background-color: ;
+  color: #52044B;
+  transition: color 0.2s ease 0s;
 }
 
 .wrapper {
@@ -66,7 +71,7 @@ nav a:hover {
 
 .content {
   background: #F5F5F5;
-  padding: 2.5em 3em;
+  padding: 1.25em 1.5em;
   box-shadow: 0 3px 15px #17202A;
 }
 
@@ -184,9 +189,13 @@ button:hover {
   transition: box-shadow 0.3s ease 0s;
 }
 
-.opening > div {
+.opening > .details {
   flex-grow: 1;
   padding: 12px;
+}
+
+.details p {
+
 }
 
 .opening:hover {
@@ -209,8 +218,9 @@ button:hover {
   background-color: #7AC7C4;
   color: #008080;
   display: block;
+  letter-spacing: 2px;
   margin: 1em auto;
-  padding: 1em 2em;
+  padding: 1em 1.25em;
   text-align: center;
   text-transform: uppercase;
   transition: color 0.3s ease 0s;
@@ -221,6 +231,7 @@ button:hover {
   background-color: #7AC7C4;
   color: #008080;
   display: block;
+  letter-spacing: 2px;
   padding: 0.75em;
   text-align: center;
   text-transform: uppercase;
@@ -252,8 +263,9 @@ button:hover {
     font-size: 16px;
     text-align: left;
   }
-  input, button {
-    width: 75%;
+
+  .content {
+    padding: 2.5em 3em;
   }
 
   .opening {
